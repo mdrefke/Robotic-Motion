@@ -10,13 +10,8 @@ function eqns = NewtonEulerSystemEquations(system, q, qdot, qddot)
 % motion in terms of q, qdot, qddot, reaction force/torque components, and 
 % any control input variables
 
-    %% YOUR CODE HERE
+    %% MD's CODE
 
-    % Implement this function to fill out eqns by computing. You will need 
-    % to make use of NewtonEulerBodyEquations from last week, as applied to
-    % each body in the RigidBodySystem. Make sure to include all bodies
-    % (even those with zero mass!) since (reaction) forces can be
-    % transmitted thru these bodies.
     eqns = [];
     path = system.child_bodies;
     for i = 1:length(path)

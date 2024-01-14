@@ -29,15 +29,13 @@ for i = 1:numel(system.joints)
     % can be constructed using the parent and child body names.
     name = ['_reaction_' P.name '_' C.name '_'];
 
-    %% YOUR CODE HERE
+    %% MD's CODE:
 
     % determine which components have reaction forces/torques depending on
     % joint type (no reaction component should act along a degree of freedom
     % which is free to move)
     switch joint.type
         case JointType.Fixed
-            % this case is already completely implemented
-
             % nothing is free to move, so all components are nonzero in
             % the reaction force and torque.
             nF = 3; % 3 nonzero components in reaction force
@@ -50,8 +48,6 @@ for i = 1:numel(system.joints)
 
         case JointType.Translation
 
-            % how many components each should the reaction force and
-            % torque have for this JointType?
             nF = 2;
             nT = 3;
             F = sym(['F' name],[nF 1],'real');
@@ -70,8 +66,6 @@ for i = 1:numel(system.joints)
 
         case JointType.Rotation
 
-            % how many components each should the reaction force and
-            % torque have for this JointType?
             nF = 3;
             nT = 2;
             F = sym(['F' name],[nF 1],'real');
@@ -89,7 +83,7 @@ for i = 1:numel(system.joints)
 
     end
 
-    %% END YOUR CODE
+    %% END OF MD's CODE
 
     r_Co_G = [0;0;0]; % point it's applied ON is origin of the Joint's child frame Co
     r_Po_H = joint.r_Po_Jo; % point it's applied FROM is origin of the Joint's frame Jo

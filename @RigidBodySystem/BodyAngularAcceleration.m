@@ -30,13 +30,7 @@ for i=1:length(path)-1
   % The new child is the next body on the path
   C = system.bodies(path(i+1));
 
-  %% YOUR CODE GOES HERE
-  % Compute Angular Velocity w_P_C and angular acceleration alpha_P_C
-  % across the current joint
-  % Be sure to check whether we are going backwards and adjust accordingly
-
-  %call joint child velocity and joint child acceleration to find angular
-  %velocity
+  %% MD's CODE:
   
   [~, w_JP_JC] = system.JointChildVelocity(system.joints(joint_index), ...
       qdot, system.joint_to_state_index(joint_index));

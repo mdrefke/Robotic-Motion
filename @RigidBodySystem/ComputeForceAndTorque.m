@@ -18,8 +18,6 @@ switch(force_torque.type)
 
     case ForceTorqueType.Gravity
 
-        % This case is already implemented - you don't need to modify it!
-
         g = force_torque.params.g; % gravitational constant
 
         F_C_N = [0; 0; -force_torque.C.mass * g];
@@ -31,19 +29,7 @@ switch(force_torque.type)
         L = force_torque.params.L; % natural length of spring (length for
         % zero force)
 
-        %% YOUR CODE HERE
-
-        % Compute the force and torque applied on body C by a spring
-        % stretched between point G (on body C) and point H (on body
-        % P). The geometric description of these points is stored in
-        % the ForceTorque object that is an argument of this function.
-        % Consult the documentation of this class for more details.
-        %
-        % Note: you may assume the spring *total* length is always > 0
-        % (that is, including the natural length at rest). You may also
-        % assume that it is a "simple" spring i.e. there is a linear
-        % relationship between displacement from rest and force
-        % produced.
+        %% MD's CODE:
 
         R_H_G = RelativePointPosition(system, q, force_torque.C, force_torque.r_Co_G, force_torque.P, force_torque.r_Po_H);
         R_H_G = system.ChangeCoordinates(q, R_H_G, force_torque.P, N);

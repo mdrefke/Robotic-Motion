@@ -52,14 +52,8 @@ function [F_B_N, M_Bcm_N] = AppliedForcesAndMoments(system, q, qdot, B)
           continue
         end
         
-        %% YOUR CODE HERE
+        %% MD's CODE:
         
-        % Edit this section so that the function will add up the
-        % contributions of all applied forces and torques acting on this
-        % body. You will need to make use of:
-        % - the force Fi_B_N applied to the body at point E
-        % - the torque Ti_B_N applied to the body
-        % - the position vector r_Bcm_E_B from the body center of mass to E
         frame = system.GetInertialFrameN;
         F_B_N = F_B_N + Fi_B_N;
         coords = ChangeCoordinates(system, q, r_Bcm_E_B, B, frame);

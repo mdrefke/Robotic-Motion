@@ -12,7 +12,7 @@ function [H_A_P_B] = BodyAngularMomentum(system, q, qdot, A, B, r_Ao_P)
 % 
 % @output H_A_P_B The angular momentum of Body A about P in B expressed in frame B
 
-%% YOUR CODE HERE
+%% MD's CODE:
 
 I_A_P_A = ChangeInertiaOrigin(system, A, r_Ao_P);
 I_A_P_B = ChangeInertiaCoordinates(system, q, I_A_P_A, A, B);

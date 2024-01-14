@@ -10,8 +10,7 @@ function [L_A_B] = BodyLinearMomentum(system, q, qdot, A, B)
 % @output L_A_B The linear momentum of Body A in frame B, expressed in B's
 % coordinates
 
-%% YOUR CODE HERE
-
+%% MD's CODE:
 L_A_B = A.mass * PointVelocity(system, q, qdot, A, [0 0 0]', B);
 
 end

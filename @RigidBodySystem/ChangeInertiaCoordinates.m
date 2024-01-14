@@ -10,8 +10,7 @@ function [I_S_P_B] = ChangeInertiaCoordinates(system, q, I_S_P_A, A, B)
 
 % @output I_S_P_B The inertia of S around P in B coordinates
 
-%% YOUR CODE HERE
-
+%% MD's CODE
 I_S_P_B = RelativeRotationMatrix(system, q, A, B)*I_S_P_A*RelativeRotationMatrix(system, q, A, B)';
 
 end

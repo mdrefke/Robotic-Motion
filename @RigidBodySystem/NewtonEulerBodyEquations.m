@@ -14,27 +14,9 @@ function eqn = NewtonEulerBodyEquations(system, q, qdot, qddot, B)
 %   eqn(4:6) = M - I*alpha (for appropriate M and alpha)
 % where M is an applied moment vector.
 
-%% YOUR CODE HERE
+%% MD's CODE
 
-% Implement the Newton-Euler equations for a single rigid body. You will 
-% need to make use of a number of functions implemented in previous weeks,
-% as well as the function you just finished called AppliedForcesAndMoments
-% which will generate the net applied force and moment on the body for you.
-% Be sure to work in the correct coordinates!
-
-% Note: we encourage you think about what choice of coordinate basis will make
-% these equations simplest to improve the performance of your code when used
-% with symbolic variables.  For this reason, we ask you to use the following
-% coordinate frames:
-%  - For the translational dynamics, use the N frame, since this is an inertial
-%    (i.e. non-accelerating) frame.
-%  - For the angular dynamics, use the B frame, since the inertia tensor will
-%    be constant in that frame.
-
-% We suggest the following steps (which you can conveniently use as in-line
-% comments for your lines of code):
 % 1. Get the force and moment on the body due to applied forces and moments
-% (hint: you'll implement a convenient function this week).
 
 frame = system.GetInertialFrameN;
 [F_B_N, M_Bcm_N] = AppliedForcesAndMoments(system,q,qdot,B);
@@ -61,6 +43,6 @@ RotDyn = M_Bcm_N - B.I_B_Bcm * alpha_Bcm_B - cross(w_Bcm_B, B.I_B_Bcm*w_Bcm_B);
 
 
 % 6. Combine the linear and rotational dynamics into one output vector.
-eqn = [LinDyn, RotDyn]; % replace me!
+eqn = [LinDyn, RotDyn];
 
 end

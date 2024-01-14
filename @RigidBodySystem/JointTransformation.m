@@ -12,12 +12,11 @@ function [r_Po_Co, R_P_C] = JointTransformation(system, joint, q, ...
 % @return r_Po_Co The position vector from Po to Co, expressed in P coordinates
 % @return R_P_C The rotation matrix from P to C
 
-
-  r_Po_Co = zeros(3,1); % implement later (not for HW2)!
+%% MD's CODE
+  r_Po_Co = zeros(3,1);
 
 switch(joint.type)
   case JointType.Fixed
-    % Implement later (not for HW2)!
     r_Po_Co = joint.r_Po_Jo;
     R_P_C = joint.R_P_J;
 
@@ -41,7 +40,6 @@ switch(joint.type)
 
 
   case JointType.Translation
-    % Implement later (not for HW2)!
     R_P_C = joint.R_P_J;
     r_Po_Co = joint.r_Po_Jo + joint.axis*q(configuration_index);
 end

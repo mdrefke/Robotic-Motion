@@ -11,16 +11,7 @@ function r_Q_P_B = RelativePointPosition(system, q, A, r_Ao_P, B, r_Bo_Q)
 
 [path, directions] = FindPath(system, B, A);%b is start, a is goal
 
-%% YOUR CODE HERE
-
-% Implement the function. You may find it very helpful to base the
-% structure of your solution on your implementation of
-% RelativeRotationMatrix from HW2. Some helpful hints:
-% * Pay close attention to the vector basis used to express vectors. You
-%   may wish to document this carefully in your code.
-% * You'll need to use your JointTransformation function!
-% * Just like with previous functions, keep track of the joint Parent/Child
-%   and the current Parent/Child in your for loop.
+%% MD's CODE
 
 r_Bo_Co = zeros(3,1);  %there is no r yet since we haven't gone anywhere
 C = B; %specify that B is the first child object
@@ -41,7 +32,7 @@ for i = 1:length(path)-1 %walk through whole path
         
     if directions(i) < 0
         r_JP_JC = -r_JP_JC; % neg direction means -r
-        P = C; %old child is new parent %%%%%%%%%%%%%
+        P = C; %old child is new parent 
     end
     
     % need r_Po_Co in parent's coordinates, not B's

@@ -14,22 +14,7 @@ function a_B_Q = PointAcceleration(system, q, qdot, qddot, A, r_Ao_Q, B)
 
 [path, directions] = FindPath(system, B, A);
 
-%% YOUR CODE HERE
-
-% Implement the function. You may find it very helpful to base the
-% structure of your solution on your implementation of
-% BodyAngularAcceleration from HW3.  Some helpful hints:
-% * Using `path`, in a "for loop", find the acceleration of points along
-%   the path in B. If `C` is a body on the path, find `a_B_Co`.
-% * Pay close attention to the vector basis used to express vectors. You
-%   may wish to document this carefully in your code.
-% * You'll find it helpful to make use of the functions you've written in
-%   previous weeks. For instance, JointTransformation, JointChildVelocity,
-%   JointChildAcceleration, BodyAngularVelocity, BodyAngularAcceleration,
-%   and ChangeCoordinates.
-% * Just like with previous functions, keep track of the joint Parent/Child
-%   and the current Parent/Child in your for loop.
-
+%% MD's CODE
 
 C = B; %begin with B as child so that when u work through you cover everything
 v_B_C = zeros(3,1); %adapted from BodyAngularVelocity

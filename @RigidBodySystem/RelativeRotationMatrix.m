@@ -39,7 +39,7 @@ for i=1:length(path)-1
   [~, R_P_C] = system.JointTransformation(system.joints(joint_index), q, ...
                                     system.joint_to_state_index(joint_index));
     
-  %% YOUR CODE GOES HERE
+  %% MD's CODE:
   % Calculate R_B_C given the matrices computed above
   
   %%moving backwards means you need to use the transpose

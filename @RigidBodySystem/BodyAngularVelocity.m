@@ -36,14 +36,8 @@ for i=1:length(path)-1
   [~, w_JP_JC] = system.JointChildVelocity(system.joints(joint_index), qdot, ...
       system.joint_to_state_index(joint_index));
 
-  %% YOUR CODE GOES HERE
-  % Check whether we are going forward or backwards across the joint
-  % HINT: relate JC, JP to C and P and keep track of coordinates!
+  %% MD's CODE:
   
-  % REMEMBER, in this function, P and C refer to the parent and child in
-  % the PATH, while JP and JC refer to the parent and child in the joint
-  % (and therefore in the tree underlying the rigid body system).
-
   if directions(i) > 0
       w_B_C = w_B_P + ChangeCoordinates(system, q, w_JP_JC, P, B);
       % JP=P, JC=C

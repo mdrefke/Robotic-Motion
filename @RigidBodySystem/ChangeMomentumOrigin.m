@@ -12,9 +12,9 @@ function [H_A_P_B] = ChangeMomentumOrigin(system, q, qdot, A, B, H_A_Ao_B, r_Ao_
 %
 % @output H_A_P_B Angular momentum of A in B, about P, expressed in B coordinates
 
-%% YOUR CODE HERE
+%% MD's CODE:
 
-H_A_P_B = H_A_Ao_B + cross(-r_Ao_P_B, BodyLinearMomentum(system,q,qdot,A,B)); % replace me
+H_A_P_B = H_A_Ao_B + cross(-r_Ao_P_B, BodyLinearMomentum(system,q,qdot,A,B));
 
 end
 

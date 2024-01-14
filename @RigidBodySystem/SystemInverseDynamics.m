@@ -63,14 +63,14 @@ handle = @(x,qddot)inverseDynamics(x,qddot,A_, b_);
     %     A(x) * [u; reactions] = b(x,qddot)
     % which you will solve.
 
-    %% YOUR CODE HERE
+    %% MD's CODE:
 
     % Hint, similar to in SymbolicSystemDynamics, you will need to
     % determine the lengths of u and the reactions vectors.
     n_u = length(system.AggregateControlInputs()); % the number of control inputs
     vec = A_(x)\b_(x,qddot);
-    u = vec(1:n_u); %replace me!
-    reactions = vec(n_u+1:end); % replace me!
+    u = vec(1:n_u);
+    reactions = vec(n_u+1:end);
   end
 
 end

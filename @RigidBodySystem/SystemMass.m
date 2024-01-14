@@ -10,7 +10,7 @@ function [m_S] = SystemMass(system)
 m_S = 0;
 for i = 1:length(system.child_bodies)
     body = system.child_bodies(i);
-    m_S = m_S + body.mass; %j keep adding masses
+    m_S = m_S + body.mass; %keep adding masses
 end
 
 
