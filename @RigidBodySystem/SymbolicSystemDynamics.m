@@ -85,7 +85,7 @@ function [xdot, reactions] = dynamics(t,x,A_,b_,u)
     % Hint: you will need to determine the lengths of the qddot and
     % reactions vectors. Since x = [q; qdot], this is possible!
     A = A_(x);
-    b = b_(x);
+    b = b_(x,u);
 
     
     vec = A\b;
