@@ -56,8 +56,8 @@ for i = 1:length(path)-1
 
     %change everything to being written in B
     r_Po_Co = ChangeCoordinates(system, q, r_Po_Co, P, B);
-    v_P_C = ChangeCoordinates(system, qdot, v_P_C, P, B);
-    a_P_C = ChangeCoordinates(system, qddot, a_P_C, P, B);
+    v_P_C = ChangeCoordinates(system, q, v_P_C, P, B);
+    a_P_C = ChangeCoordinates(system, q, a_P_C, P, B);
 
     %%find angular values to be used in golden rule crosses
     w_B_P = BodyAngularVelocity(system, q, qdot, P, B);
